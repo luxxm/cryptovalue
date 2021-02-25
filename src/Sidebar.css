@@ -136,6 +136,8 @@
     bottom: 1vw;
     left: 120%;
 
+    width: 400%;
+
     border-radius: .3em;
 
     box-shadow: var(--shadow) .1em .1em 1em;

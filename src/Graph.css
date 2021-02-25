@@ -116,3 +116,45 @@
 .price {
     width: 20em;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.days {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: auto;
+    margin-right: 1vw;
+}
+
+.days h4 {
+    margin-top: .5vw;
+}
+
+.day-selector {
+    width: 2.2vw;
+    height: 1.5vw;
+
+    margin-top: .4vw;
+    margin-left: .6vw;
+    margin-right: .6vw;
+
+    background-color: var(--background);
+    color: var(--primary);
+
+    border-style: none;
+    border-radius: .2vw;
+
+    text-align: center;
+
+    font-size: 1em;
+}

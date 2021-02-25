@@ -8,7 +8,8 @@ import reportWebVitals from './reportWebVitals';
 import Saved from './Saved';
 
 ReactDOM.render(
-  <React.StrictMode>
+  /*<React.StrictMode>*/
+  <div>
     <Sidebar />
 
     <App />
@@ -18,8 +19,9 @@ ReactDOM.render(
     <div id="loadscreen">
 
     </div>
+  </div>
     
-  </React.StrictMode>,
+  /*</React.StrictMode>*/,
   document.getElementById('root')
 );
 

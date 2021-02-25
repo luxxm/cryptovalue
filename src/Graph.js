@@ -14,7 +14,36 @@ var colors = {
 
 var allCharts = [];
 
+
+
 class Graph extends React.Component {
+    changeDays(days) {
+        if (days > 0 && days < 600)
+            getCoinData(this.props.coin, days).then((value) => {
+                this.value = value
+
+                var newData = {
+                    labels: this.value,
+                    datasets: [{
+                        label: 'Value (USD)',
+                        data: this.value,
+                        backgroundColor: [
+                            colors.chartMain,
+                            colors.chartMain
+                        ],
+                        borderColor: [colors.chartBorder],
+                        borderWidth: 1,
+                        pointBackgroundColor: colors.chartPoint,
+                        pointRadius: 0,
+                        lineTension: 0
+                    }]
+                };
+
+                this.chart.data = newData;
+                this.chart.update();
+            });
+    }
+
     alignCharts() {
         document.getElementById(this.props.parent + this.props.coin).style.marginLeft = `${this.props.x}vw`;
         document.getElementById(this.props.parent + this.props.coin).style.marginTop = `${this.props.y}vw`;
@@ -25,13 +54,15 @@ class Graph extends React.Component {
         var chart;
 
         getCoinData(this.props.coin, this.props.days).then((value) => {
+            this.value = value
+
             chart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: value,
+                    labels: this.value,
                     datasets: [{
                         label: 'Value (USD)',
-                        data: value,
+                        data: this.value,
                         backgroundColor: [
                             colors.chartMain,
                             colors.chartMain
@@ -122,7 +153,7 @@ class Graph extends React.Component {
 
             allCharts.push(chart);
 
-            return chart;
+            this.chart = chart;
         });
     }
 
@@ -167,6 +198,19 @@ class Graph extends React.Component {
                     <div class="data-div">
                         <h3 class='price'>Current price: </h3>
                         <h3 class='24change'>24hr change: </h3>
+                    </div>
+
+                    <div class="days">
+                        <h4>Last</h4>
+
+                        <input type="number" class="day-selector" placeholder='1' onBlur={(inp) => {
+                            this.changeDays(inp.target.value);
+
+                            if(inp.target.value > 1)
+                                inp.target.placeholder = inp.target.value.toString()
+                            }} />
+
+                        <h4>days</h4>
                     </div>
                 </div>
             </div>
