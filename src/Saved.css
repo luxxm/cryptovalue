@@ -1,0 +1,18 @@
+:root {
+    --background: rgb(60, 60, 60);
+    --primary: white;
+    --secondary: #ff9d0a;
+    --textShadow: black;
+    --shadow: black;
+}
+
+.Saved {
+    position: absolute;
+
+    width: 80vw;
+
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+    display: none;
+}

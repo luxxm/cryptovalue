@@ -1,0 +1,45 @@
+:root {
+    --background: rgb(60, 60, 60);
+    --primary: white;
+    --secondary: #ff9d0a;
+    --textShadow: black;
+    --shadow: black;
+}
+
+.Crypto {
+    position: absolute;
+
+    width: 80vw;
+
+    padding-left: 10vw;
+    padding-right: 10vw;
+
+    display: none;
+}
+
+.graph-container {
+    width: 50%;
+}
+
+#credits {
+    position: absolute;
+
+    color: var(--primary);
+
+    width: 10%;
+    height: 5vh;
+
+    font-size: .5vw;
+    text-align: center;
+    font-weight: 300;
+
+    text-shadow: var(--textShadow) .1em .1em .1em;
+}
+
+#credits a {
+    padding-right: .3em;
+}
+
+#credits a:hover {
+    cursor: pointer;
+}
