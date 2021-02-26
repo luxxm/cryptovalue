@@ -10,13 +10,15 @@ function updateCharts() {
 
         allCharts[i].options.tooltips.backgroundColor = colors.chartTooltip;
         allCharts[i].options.tooltips.bodyFontColor = colors.chartTFont;
-        allCharts[i].options.scales.yAxes[0].ticks.fontColor = colors.chartTFont;
+        allCharts[i].options.scales.yAxes[0].ticks.fontColor = colors.chartYFont;
 
         allCharts[i].update();
     }
 
     console.log(allCharts);
 }
+
+console.log(allCharts);
 
 var themes = {
     dark: function() {
@@ -50,13 +52,18 @@ var themes = {
         doc.setProperty('--hoverCol1', '#ffc063');
         doc.setProperty('--hoverCol2', '#ff9d0a');
 
+        doc.setProperty('--barImg', 'invert()');
+        doc.setProperty('--barImgHover', 'invert() invert()');
+
+        doc.setProperty('--saveCol', 'rgb(180, 180, 180)');
+
         updateCharts();
     },
     light: function() {
         colors.chartMain = 'rgba(200, 200, 200, 0.3)';
         colors.chartPoint = 'rgba(200, 200, 200, 0.5)';
         colors.chartBorder = 'rgba(200, 200, 200, 1)';
-        colors.chartYFont = 'rgb(0, 0, 0)';
+        colors.chartYFont = '#000000';
         colors.chartTooltip = 'rgb(120, 120, 120)';
 
         doc.setProperty('--background', '#ffffff');
@@ -84,6 +91,8 @@ var themes = {
         doc.setProperty('--graphBackground', '#EEEDE7');
         doc.setProperty('--barBackground', '#B9B7BD');
         doc.setProperty('--buttonImg', 'invert() invert()');
+        doc.setProperty('--barImg', 'invert() invert()');
+        doc.setProperty('--saveCol', 'black');
 
         updateCharts();
     },
@@ -137,6 +146,8 @@ var themes = {
         doc.setProperty('--buttonImg', 'invert()');
         doc.setProperty('--hoverCol1', '#ffff68');
         doc.setProperty('--hoverCol2', '#d8d800');
+        doc.setProperty('--barImg', 'invert() invert()');
+        doc.setProperty('--saveCol', 'black');
 
         updateCharts();
     }

@@ -202,7 +202,7 @@
 
     margin-right: .5em;
 
-    filter: var(--buttonImg);
+    border-radius: .5em;
 }
 
 .theme-div:hover {

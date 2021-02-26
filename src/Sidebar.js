@@ -60,27 +60,27 @@ function ThemeSelector(props) {
             <h2>Themes</h2>
 
             <div class='theme-div' onClick={() => themeChange(themes.dark)}>
-                <img src='other/home.png' />
+                <img src='themes/dark.png' />
                 <button>DARK</button>
             </div>
             <div class='theme-div' onClick={() => themeChange(themes.light)}>
-                <img src='other/home.png' />
+                <img src='themes/light.png' />
                 <button>LIGHT</button>
             </div>
             <div class='theme-div' onClick={() => themeChange(themes.silver)}>
-                <img src='other/home.png' />
+                <img src='themes/silver.png' />
                 <button>SILVER</button>
             </div>
             <div class='theme-div' onClick={() => themeChange(themes.cord)}>
-                <img src='other/home.png' />
+                <img src='themes/cord.png' />
                 <button>CORD</button>
             </div>
             <div class='theme-div' onClick={() => themeChange(themes.solarized)}>
-                <img src='other/home.png' />
+                <img src='themes/solarized.png' />
                 <button>SOLARIZED</button>
             </div>
             <div class='theme-div' onClick={() => themeChange(themes.bny)}>
-                <img src='other/home.png' />
+                <img src='themes/bny.png' />
                 <button>BNY</button>
             </div>
         </div>
@@ -102,7 +102,7 @@ function Sidebar() {
             <SidebarButton path="other/home.png" name="HOME" cls="App" />
             <SidebarButton path="other/stocks.png" name="CRYPTO" cls="Crypto" />
             <SidebarButton path="other/watchlist.png" name="SAVED" cls="Saved"/>
-            <Settings path="other/home.png" name="SETTINGS"  />
+            <Settings path="other/settings.png" name="SETTINGS"  />
             <ThemeSelector />
         </div>
     );

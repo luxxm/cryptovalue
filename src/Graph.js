@@ -200,17 +200,24 @@ class Graph extends React.Component {
                         <h3 class='24change'>24hr change: </h3>
                     </div>
 
-                    <div class="days">
-                        <h4>Last</h4>
+                    <div class="interactive">
+                        <div class="days">
+                            <h4>Last</h4>
 
-                        <input type="number" class="day-selector" placeholder='1' onBlur={(inp) => {
-                            this.changeDays(inp.target.value);
+                            <input type="number" class="day-selector" placeholder='1' onBlur={(inp) => {
+                                this.changeDays(inp.target.value);
 
-                            if(inp.target.value > 1)
-                                inp.target.placeholder = inp.target.value.toString()
-                            }} />
+                                if(inp.target.value > 1)
+                                    inp.target.placeholder = inp.target.value.toString()
+                                }} />
 
-                        <h4>days</h4>
+                            <h4>days</h4>
+                        </div>
+
+                        <div class="save">
+                            <img src="other/save.png" />
+                            <h4>SAVE</h4>
+                        </div>
                     </div>
                 </div>
             </div>
