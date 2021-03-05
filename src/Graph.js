@@ -2,6 +2,7 @@ import React from 'react';
 import './Graph.css';
 import Chart from 'chart.js';
 import {getCoinData, getPriceChange} from './GetData';
+import {getCookie, setCookie} from './cookieHandler';
 
 var colors = {
     chartMain: 'rgba(250, 180, 0, 0.3)',
@@ -17,6 +18,34 @@ var allCharts = [];
 
 
 class Graph extends React.Component {
+    handleCookies() {
+        this.cookieData = getCookie('saved');
+
+        if (!this.cookieData) {
+            this.svd = "SAVE";
+
+            return
+        }
+
+        if (Array.isArray(this.cookieData))
+            for (var i of this.cookieData)
+                if (i == this.props.coin)
+                    this.svd = "REMOVE";
+
+        console.log(this.svd)
+    }
+
+    handleClick() {
+        if (this.svd == "SAVE") {
+            if (!this.cookieData)
+                setCookie('saved', [this.props.coin])
+            else {
+                this.cookieData.push(this.props.coin);
+                setCookie('saved', this.cookieData);
+            }
+        }
+    }
+
     changeDays(days) {
         if (days > 0 && days < 600)
             getCoinData(this.props.coin, days).then((value) => {
@@ -180,6 +209,10 @@ class Graph extends React.Component {
         window.addEventListener('load', this.createChart);
         window.addEventListener('load', this.getValue);
         window.addEventListener('load', this.alignCharts);
+
+        this.handleCookies();
+
+        this.svd = "SAVE";
     }
 
     render() {
@@ -214,9 +247,9 @@ class Graph extends React.Component {
                             <h4>days</h4>
                         </div>
 
-                        <div class="save">
+                        <div class="save" onClick={() => this.handleClick()}>
                             <img src="other/save.png" />
-                            <h4>SAVE</h4>
+                            <h4>{this.svd}</h4>
                         </div>
                     </div>
                 </div>

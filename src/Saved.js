@@ -1,35 +1,45 @@
+import React from 'react';
 import './Saved.css';
 import {getCookie, setCookie} from './cookieHandler';
 import Graph from './Graph';
 
-function Saved(props) {
-    var list = [];
-    var cookieData = getCookie('saved');
+class Saved extends React.Component {
+    constructor(props) {
+        super(props)
 
-    var xState = true;
-    var yState = 4;
+        this.list = []
 
-    if (Array.isArray(cookieData)) {
-        for (var i in cookieData) {
-            list.push(
-                <Graph parent={props.parent} x={xState ? '0' : '45'} y={yState.toString()} coin={cookieData[i]} days='1' />
-            );
+        this.loadCookies();
+    }
 
-            xState = !xState;
+    loadCookies() {
+        this.list = [];
+        var cookieData = getCookie('saved');
 
-            if (xState)
-                yState += 31;
+        var xState = true;
+        var yState = 4;
+
+        if (Array.isArray(cookieData)) {
+            for (var i in cookieData) {
+                this.list.push(
+                    <Graph parent={this.props.parent} x={xState ? '0' : '45'} y={yState.toString()} coin={cookieData[i]} days='1' />
+                );
+
+                xState = !xState;
+
+                if (xState)
+                    yState += 31;
+            }
         }
     }
 
-    if (!cookieData)
-        console.log('Cookie don\'t exist')
-
-    return(
-        <div class="Saved">
-            {list}
-        </div>
-    );
+    render () {
+        return (
+            <div class="Saved">
+                {this.list}
+            </div>
+        );
+    }
 }
 
 export default Saved;

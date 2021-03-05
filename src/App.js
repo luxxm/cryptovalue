@@ -12,12 +12,22 @@ function App(props) {
         </div>
 
         <div id="details">
-          <h2>ABOUT</h2>
+          <div class="line-box">
+            <div class="info-card">
+              <h1>Clean</h1>
+              <p>The purpose of Cryptovalue is to quickly show relevant information without any hassle. The website layout is simple and easy to quickly navigate.</p>
+            </div>
 
-          <p class="normal-text">Cryptovalue is a website for monitoring all of your favorite cryptocurrencies.
-          With a focus on simplicity and convenience, cryptovalue is easy to use, for anyone, without any trouble.
-          With our intuitive features, you're guaranteed not to miss out on anything.
-          Check out our <b><a href="/crypto">crypto collection</a></b>.</p>
+            <div class="info-card">
+              <h1>Simple</h1>
+              <p>Cryptovalue is to be used by everyone. That's why all the data is presented in an easy way to understand.</p>
+            </div>
+
+            <div class="info-card">
+              <h1>Up-to-date</h1>
+              <p>With the help of a third-party API, you are shown the latest crypto data and all the critical market changes.</p>
+            </div>
+          </div>
         </div>
         
       </div>

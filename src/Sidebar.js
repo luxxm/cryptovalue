@@ -102,7 +102,7 @@ function Sidebar() {
             <SidebarButton path="other/home.png" name="HOME" cls="App" />
             <SidebarButton path="other/stocks.png" name="CRYPTO" cls="Crypto" />
             <SidebarButton path="other/watchlist.png" name="SAVED" cls="Saved"/>
-            <Settings path="other/settings.png" name="SETTINGS"  />
+            <Settings path="other/settings.png" name="THEMES"  />
             <ThemeSelector />
         </div>
     );

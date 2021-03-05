@@ -213,3 +213,71 @@
 :focus {outline:none;}
 
 ::-moz-focus-inner {border:0;}
+
+@media only screen and (max-width: 768px) and (min-height: 500px) {
+    #sidebar {
+        width: 75%;
+        height: 5.5vh;
+
+        flex-direction: row;
+       
+        bottom: 0;
+
+        padding-left: 25%;
+    }
+
+    .sidebar-button {
+        width: 12.5em;
+        height: 100%;
+
+        margin: 0;
+        margin-left: 5%;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar-button::before {
+        display: none;
+    }
+
+    .sidebar-button:hover img {
+        filter:  var(--buttonImg);
+    }
+
+    .sidebar-button:hover::before {
+        display: none;
+    }
+
+    .sidebar-button h3 {
+        display: none;
+    }
+
+    .sidebar-button img {
+        padding-left: 0;
+
+        width: 3.8vh;
+        height: 3.8vh;
+    }
+
+    #settings {
+        margin: 0;
+        margin-left: auto;
+    }
+
+    #theme-selector {
+        left: 48%;
+        right: 0;
+        bottom: 6vh;
+
+        width: 50%;
+    }
+
+    #theme-selector h2 {
+        font-size: 3vw;
+    }
+
+    #theme-selector button {
+        font-size: 3vw;
+    }
+}
