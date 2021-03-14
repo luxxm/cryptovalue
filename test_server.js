@@ -9,4 +9,4 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-var server = app.listen(5000);
+var server = app.listen(80);
