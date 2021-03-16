@@ -14,11 +14,7 @@ function updateCharts() {
 
         allCharts[i].update();
     }
-
-    console.log(allCharts);
 }
-
-console.log(allCharts);
 
 var themes = {
     dark: function() {

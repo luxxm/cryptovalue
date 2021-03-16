@@ -3,6 +3,7 @@ import './Graph.css';
 import Chart from 'chart.js';
 import {getCoinData, getPriceChange} from './GetData';
 import {getCookie, setCookie} from './cookieHandler';
+import themes from './themes';
 
 var colors = {
     chartMain: 'rgba(250, 180, 0, 0.3)',
@@ -93,7 +94,6 @@ class Graph extends React.Component {
                         label: 'Value (USD)',
                         data: this.value,
                         backgroundColor: [
-                            colors.chartMain,
                             colors.chartMain
                         ],
                         borderColor: [colors.chartBorder],
