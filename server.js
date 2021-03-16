@@ -1,7 +1,5 @@
 const stDate = new Date();
 
-console.log(`[${stDate.getUTCFullYear()}.${stDate.getUTCMonth()}.${stDate.getUTCDate()} ${stDate.getUTCHours()}:${stDate.getUTCMinutes()}] SERVER STARTED!`);
-
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -26,7 +24,10 @@ app.use((req, res) => {
     console.log(`[${date.getUTCFullYear()}.${date.getUTCMonth()}.${date.getUTCDate()} ${date.getUTCHours()}:${date.getUTCMinutes()}] ${ip} requested ${req.url}, given 404`);
 });
 
-var server = app.listen(0, "127.0.0.1");
+var server = app.listen(0, () => {
+    console.log(`[${stDate.getUTCFullYear()}.${stDate.getUTCMonth()}.${stDate.getUTCDate()} ${stDate.getUTCHours()}:${stDate.getUTCMinutes()}] SERVER STARTED AT ${server.address().address}:${server.address().port}!`);
+});
+
 
 function serverExit(exCode) {
     var date = new Date();
