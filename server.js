@@ -24,7 +24,7 @@ app.use((req, res) => {
     console.log(`[${date.getUTCFullYear()}.${date.getUTCMonth()}.${date.getUTCDate()} ${date.getUTCHours()}:${date.getUTCMinutes()}] ${ip} requested ${req.url}, given 404`);
 });
 
-var server = app.listen(0, () => {
+var server = app.listen(0 || process.env.PORT, () => {
     console.log(`[${stDate.getUTCFullYear()}.${stDate.getUTCMonth()}.${stDate.getUTCDate()} ${stDate.getUTCHours()}:${stDate.getUTCMinutes()}] SERVER STARTED AT ${server.address().address}:${server.address().port}!`);
 });
 
