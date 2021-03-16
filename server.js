@@ -6,7 +6,7 @@ var path = require('path');
 
 app.get('/', (req, res) => {
     var date = new Date();
-    const ip = req.header['x-forwarded-for'] || req.socket.remoteAddress;
+    const ip = req.socket.remoteAddress || req.header['x-forwarded-for'];
 
     console.log(`[${date.getUTCFullYear()}.${date.getUTCMonth()}.${date.getUTCDate()} ${date.getUTCHours()}:${date.getUTCMinutes()}] ${ip} requested /`);
 
