@@ -26,7 +26,7 @@ app.use((req, res) => {
     console.log(`[${date.getUTCFullYear()}.${date.getUTCMonth()}.${date.getUTCDate()} ${date.getUTCHours()}:${date.getUTCMinutes()}] ${ip} requested ${req.url}, given 404`);
 });
 
-var server = app.listen(process.env.port || 8080);
+var server = app.listen();
 
 function serverExit(exCode) {
     var date = new Date();
